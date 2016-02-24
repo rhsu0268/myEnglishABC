@@ -36,4 +36,9 @@ Change into the root of the project directory and run:
 python manage.py runserver 0.0.0.0:8000
 ```
 
+To add an application to the project:
+
+```
+python manager.py startapp <name of app>
+```
 
