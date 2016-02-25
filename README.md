@@ -42,3 +42,15 @@ To add an application to the project:
 python manager.py startapp <name of app>
 ```
 
+Setting up mySQL:
+
+1. Install python-mysql
+
+For Python 3:
+
+```
+pip install PyMySQL
+```
+
+2. 
+
