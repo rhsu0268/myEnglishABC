@@ -86,14 +86,11 @@ WSGI_APPLICATION = 'myEnglishABC.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DB_NAME',
-        'USER': 'DB_USER',
-        'PASSWORD': 'DB_PASSWORD',
+        'NAME': 'my_english_abc',
+        'USER': 'root',
+        'PASSWORD': 'Sponge^123',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
-        'OPTIONS': {
-            'read_default_file': '/path/to/my.cnf',
-        },
     }
 
 }

@@ -83,12 +83,35 @@ SET PASSWORD = PASSWORD('xxxxxx');
 
 ## Setting up MySQL with django
 
-1. Install python-mysql
 
-For Python 3:
+1. Go into settings.py and set the following:
 
 ```
-pip install PyMySQL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '<NAME OF DATABASE>',
+        'USER': 'root',
+        'PASSWORD': 'xxx',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+
+}
 ```
 
+2. Run the migrate command to sync mySQL with django:
+
+```
+python manage.py migrate
+```
+
+3. Then, go into mySQLPro:
+
+Name:
+Host: 127.0.0.1
+USername: root
+Password: <xxx>
+database: Name of the database>
+Port: 3306
 
