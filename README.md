@@ -123,3 +123,8 @@ Here are 3 steps when you work with databases:
 2. Run ```python manage.py makemigrations``` to create migrations for those changes.
 3. Run ```python manage.py makemigrations``` to apply those changes to the database. 
 
+## Creating an admin user
+
+```
+python manage.py createsuperuser
+```

@@ -4,3 +4,6 @@ from django.shortcuts import HttpResponse
 
 def index(request):
     return HttpResponse("Hello, world. You are at the dictionary index.")
+
+def detail(request, sentence_id):
+	return HttpResponse("You are loking at sentence %s." % sentence_id)
