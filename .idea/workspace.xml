@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b42b74d3-17cc-4308-b731-11ae6eaa9787" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dictionary/models.py" afterPath="$PROJECT_DIR$/dictionary/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEnglishABC/settings.py" afterPath="$PROJECT_DIR$/myEnglishABC/settings.py" />
-    </list>
+    <list default="true" id="b42b74d3-17cc-4308-b731-11ae6eaa9787" name="Default" comment="" />
     <ignored path="myEnglishABC.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
