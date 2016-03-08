@@ -1,10 +1,7 @@
-{% load staticfiles %}
+{% extends "dictionary/layout.html" %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'dictionary/style.css' %}"/>
+{% block title %}Dictionary{% endblock %}
 
-<html>
-	<head>myEnglishABC</head>
-	<body>
-		<h1>Welcome to myEnglishABC</h1>
-	</body>
-</html>
+{% block content %}
+<h1>Welcome!</h1>
+{% endblock %}
