@@ -21,5 +21,6 @@ from .import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^dictionary/', include('dictionary.urls')),
+    url(r'^video/', include('video.urls')),
     url(r'^admin/', admin.site.urls),
 ]
