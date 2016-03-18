@@ -129,3 +129,5 @@ Here are 3 steps when you work with databases:
 ```
 python manage.py createsuperuser
 ```
+
+Enter an email and password.
