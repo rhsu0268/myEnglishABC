@@ -121,7 +121,7 @@ Here are 3 steps when you work with databases:
 
 1. Change your models in models.py.
 2. Run ```python manage.py makemigrations``` to create migrations for those changes.
-3. Run ```python manage.py makemigrations``` to apply those changes to the database. 
+3. Run ```python manage.py migrate <app name>``` to apply those changes to the database.
 
 ## Creating an admin user
 
