@@ -27,7 +27,7 @@
     "model": "video.video",
     "pk": 4,
     "fields": {
-      "title": "Video 4"
+      "title": "Video 4",
       "video_link": "yYe14aLpv8E"
     }
   },
