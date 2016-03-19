@@ -9,8 +9,8 @@ def index(request):
     #return HttpResponse("Hello, world. You are at the dictionary index.")
 
     videos = Video.objects.all()
-    output = ', '.join([str(video) for video in videos])
-    return HttpResponse(output)
+    #output = ', '.join([str(video) for video in videos])
+    return render(request, 'video/index.html', {'videos': videos })
     #template = loader.get_template('video/index.html')
     #context = {}
     #return HttpResponse(template.render(context, request))

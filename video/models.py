@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Video(models.Model):
-    title = models.sCharField(max_lenght=200)
+    title = models.CharField(max_length=200, default='a title')
     video_link = models.CharField(max_length=200)
 
     def __str__(self):
