@@ -154,3 +154,15 @@ TEMPLATES = [
     },
 ]
 ```
+
+## Static Files
+
+Make sure you update settings.py with the name of the directory:
+
+```
+STATIC_URL = '/static/'
+```
+
+```
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), os.path.join(BASE_DIR, "images"),)
+```
