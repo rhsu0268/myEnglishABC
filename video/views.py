@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.shortcuts import HttpResponse
 from django.shortcuts import loader
 
@@ -16,5 +16,7 @@ def index(request):
     #return HttpResponse(template.render(context, request))
 
 def video_detail(request, pk):
-    video = Video.objects.get(pk=pk)
+    #video = Video.objects.get(pk=pk)
+
+    video = get_object_or_404(Video, pk=pk)
     return render(request, 'video/video_detail.html', {'video': video})

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42b74d3-17cc-4308-b731-11ae6eaa9787" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/admin.py" afterPath="$PROJECT_DIR$/video/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/urls.py" afterPath="$PROJECT_DIR$/video/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/models.py" afterPath="$PROJECT_DIR$/video/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/views.py" afterPath="$PROJECT_DIR$/video/views.py" />
     </list>
     <ignored path="myEnglishABC.iws" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6177924">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -122,13 +121,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/video/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.53377265">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,16 +156,16 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/myEnglishABC/urls.py" />
         <option value="$PROJECT_DIR$/video/templates/video/index.html" />
-        <option value="$PROJECT_DIR$/video/models.py" />
         <option value="$PROJECT_DIR$/video/admin.py" />
-        <option value="$PROJECT_DIR$/video/views.py" />
         <option value="$PROJECT_DIR$/video/urls.py" />
         <option value="$PROJECT_DIR$/video/templates/video/video_detail.html" />
+        <option value="$PROJECT_DIR$/video/models.py" />
+        <option value="$PROJECT_DIR$/video/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="690" />
+    <option name="x" value="668" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="704" />
@@ -584,7 +583,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="690" y="23" width="1280" height="704" extended-state="0" />
+    <frame x="668" y="23" width="1280" height="704" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -934,16 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/video/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myEnglishABC/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -999,10 +988,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/video/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6177924">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53377265">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>

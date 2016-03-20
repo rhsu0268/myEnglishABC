@@ -15,6 +15,10 @@ class Note(models.Model):
     word_list = models.CharField(max_length=500)
     sentence_list = models.CharField(max_length=500)
     video = models.ForeignKey(Video)
+   # order = models.IntegerField(default=0)
+
+    #class Meta:
+        #ordering = ['order',]
 
     def set_word_list(self, x):
         self.word_list = json.dumps(x)
