@@ -14,3 +14,7 @@ def index(request):
     #template = loader.get_template('video/index.html')
     #context = {}
     #return HttpResponse(template.render(context, request))
+
+def video_detail(request, pk):
+    video = Video.objects.get(pk=pk)
+    return render(request, 'video/video_detail.html', {'video': video})
