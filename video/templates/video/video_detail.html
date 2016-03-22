@@ -1,20 +1,12 @@
-{% extends "video/layout.html" %}
+{% extends "layout.html" %}
 
-{% block title %}{video.title}}{% endblock %}
+{% block title %}{{video.title}}{% endblock %}
 
 {% block content %}
 <br><br><br><br><br>
-<article>
+<div class="container">
     <h2>{{video.title}}</h2>
-    {{video.video_link}}
-
-    <section>
-        <!--
-        {% for note in video.note_set.all %}
-            <h3>{{note.title}}</h3>
-        {% endfor %}
-        -->
-    </section>
-</article>
+    <h3>{{video.video_link}}</h3>
+</div>
 
 {% endblock %}
