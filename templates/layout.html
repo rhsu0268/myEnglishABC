@@ -59,10 +59,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/">Home</a>
+                        <a href="{% url 'views.index' %}">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="/dictionary">Dictionary</a>
+                        <a href="{% url 'dictionary:index' %}">Dictionary</a>
                     </li>
                     <li class="page-scroll">
                         <a href="{% url 'video:index' %}">Video</a>
