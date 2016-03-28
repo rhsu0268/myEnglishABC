@@ -1,7 +1,7 @@
 from django import template
 from django.utils.safestring import mark_safe
 
-import markdown2
+#import markdown2
 
 from video.models import Video
 
@@ -32,3 +32,13 @@ register = template.Library()
 #     '''Converts markdown text to HTML'''
 #     html_body = markdown2.markdown(markdown_text)
 #     return mark_safe(html_body)
+
+
+@register.inclusion_tag('video/video_nav.html')
+def nav_videos_list():
+	'''Returns dictionary of videos to display as navigation pane'''
+	videos = Video.objects.all()
+	return {'videos': videos}
+
+
+#register.inclusion_tag('video_nav.html')(nav_videos_list)

@@ -1,5 +1,7 @@
 {% load static from staticfiles %}
 
+{% load video/video_extras %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,6 +78,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <div>{% nav_videos_list %}</div>
     {% block content %}{% endblock %}
 
 
