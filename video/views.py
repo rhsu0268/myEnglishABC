@@ -19,4 +19,5 @@ def video_detail(request, pk):
     #video = Video.objects.get(pk=pk)
 
     video = get_object_or_404(Video, pk=pk)
-    return render(request, 'video/video_detail.html', {'video': video})
+    email = 'rhsu0268@gmail.com'
+    return render(request, 'video/video_detail.html', {'video': video, 'email': email})
