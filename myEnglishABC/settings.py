@@ -62,7 +62,7 @@ ROOT_URLCONF = 'myEnglishABC.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',],
+        'DIRS': ['templates','video/templatetags',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
