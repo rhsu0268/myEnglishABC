@@ -8,15 +8,15 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        {% block css %}{% endblock %}
         <script src="{% static 'js/vendor/modernizr.js' %}"></script>
         <meta class="foundation-mq">
     </head>
     <body>
-
         <nav class="top-bar" role="navigation">
             <section class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu role="menubar">
-                    <li class="menu-text">The Learning Site</li>
+                    <li class="menu-text">myEnglishABC</li>
                     <li><a href="/">Home</a></li>
                     <li><a href="/dictionary">Dictionary</a></li>
                     <li class="has-submenu">
@@ -38,17 +38,15 @@
                 <p>&copy; The Learning Site</p>
             </div>
             <div class="small-6 columns">
-         
                 <ul class="inline-list no-bullet float-right">
                     <li><a href="{% url 'video:index' %}">Video</a></li>
                 </ul>
-
             </div>
         </footer>
         <script src="{% static 'js/vendor/jquery-2.1.4.min.js' %}"></script>
         <script src="{% static 'js/vendor/what-input.min.js' %}"></script>
         <script src="{% static 'js/foundation.min.js' %}"></script>
-        
+        {% block javascript %}{% endblock %}
         <script>$(document).foundation();</script>
     </body>
 </html>
