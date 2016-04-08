@@ -28,3 +28,5 @@ class Note(models.Model):
 
     def __str__(self):
         return self.note_title
+
+
