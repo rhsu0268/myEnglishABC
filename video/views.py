@@ -29,7 +29,7 @@ def video_detail(request, pk):
 
 @login_required
 def note_create(request, video_pk):
-    video = get_object_or_404(models.Video, pk=video_pk)
+    video = get_object_or_404(Video, pk=video_pk)
     form = forms.NoteForm()
 
     if request.method == 'POST':
@@ -42,4 +42,4 @@ def note_create(request, video_pk):
             messages.add_message(request, messages.SUCCESS, 'Note Added!')
             return HttpResponseRedirect(note.get_absolute_url())
 
-    return render(request, 'video/note_form.html', {'form': form})
+    return render(request, 'video/note_form.html', {'form': form, 'video': video})
