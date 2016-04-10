@@ -20,9 +20,13 @@ $( "#translate_text" ).click(function() {
     	.done(function( data ) {
    			console.log(data);
 
+   			$('#result').append("<ul id='sentence_list'></ul>");
+
    			$.each( data.data.translations, function( i, item ) {
         		//$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
         		console.log(item);
+        		$("#result").append("<li>" + item.translatedText + "</li>");
+
       		});
     	});
     }
