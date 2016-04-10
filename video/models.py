@@ -26,7 +26,16 @@ class Note(models.Model):
     def get_word_list(self, x):
         return json.loads(self.word_list)
 
+    def get_absolute_url(self):
+        return self.video.get_absolute_url()
+
     def __str__(self):
         return self.note_title
 
 
+class Quiz():
+    total_questions = models.IntegerField(default=4)
+
+    class Meta:
+
+        verbose_name_plural = "Quizzes"
