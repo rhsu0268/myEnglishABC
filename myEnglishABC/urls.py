@@ -21,6 +21,7 @@ from .import views
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^login/', views.show_login),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),
     url(r'^suggest/$', views.suggestion_view, name='suggestion'),

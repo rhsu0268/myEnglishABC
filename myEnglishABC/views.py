@@ -15,6 +15,10 @@ def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
    return render(request, 'index.html', {'time': datetime.now() })
 
+def show_login(request):
+    #return HttpResponse("Hello, world. You are at the homepage of the application")
+   return render(request, 'login.html', {'time': datetime.now() })
+
 def suggestion_view(request):
 	form = forms.SuggestionForm()
 	if request.method == 'POST':
