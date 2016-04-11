@@ -1,5 +1,11 @@
 # myEnglishABC
 
+# Django Reference
+
+Aside from the official django website, there is the django book:
+
+<http://www.djangobook.com/en/2.0/index.html>
+
 # Project Setup
 
 Create a new virtualenv for best practice. 
