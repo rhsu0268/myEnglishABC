@@ -17,12 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from .import views
+from . import views
+
+#from . import login
+
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^login/', views.show_login),
-    url(r'^register/', views.show_register),
+    url(r'^login/', views.login.as_view()),
+    url(r'^register/', views.register),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),
     url(r'^suggest/$', views.suggestion_view, name='suggestion'),

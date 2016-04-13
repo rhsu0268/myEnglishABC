@@ -8,19 +8,39 @@ from django.http import HttpResponseRedirect
 
 from datetime import datetime
 
+from django.views.generic import View
+
 #from .forms import SuggestionForm
 from . import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
+
 
 def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
    return render(request, 'index.html', {'time': datetime.now() })
 
-def show_login(request):
-    #return HttpResponse("Hello, world. You are at the homepage of the application")
-   return render(request, 'login.html', {'time': datetime.now() })
+
+class login(View):
+
+	def get(self, request, *args, **kwargs):
+		return render(request, 'login.html')
+
+	def post(request):
+		return HttpResponse('This is POST request!')
 
 def show_register(request):
 	return render(request, 'register.html', {'time': datetime.now() })
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect("/")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {'form': form})
 
 def suggestion_view(request):
 	form = forms.SuggestionForm()
