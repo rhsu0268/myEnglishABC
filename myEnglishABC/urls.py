@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^login/', views.login),
     url(r'^register/', views.register),
+    url(r'^logout/', views.logout),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),
     url(r'^suggest/$', views.suggestion_view, name='suggestion'),
