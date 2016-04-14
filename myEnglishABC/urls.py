@@ -24,7 +24,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^login/', views.login.as_view()),
+    url(r'^login/', views.login),
     url(r'^register/', views.register),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),

@@ -12,6 +12,7 @@ from django.views.generic import View
 
 #from .forms import SuggestionForm
 from . import forms
+from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 
@@ -21,13 +22,27 @@ def index(request):
    return render(request, 'index.html', {'time': datetime.now() })
 
 
-class login(View):
+# class login(View):
 
-	def get(self, request, *args, **kwargs):
-		return render(request, 'login.html')
+# 	def get(self, request, *args, **kwargs):
+# 		return render(request, 'login.html')
 
-	def post(request):
-		return HttpResponse('This is POST request!')
+# 	def post(request):
+# 		return HttpResponse('This is POST request!')
+
+def login(request):
+
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
+    user = auth.authenticate(username=username, password=password)
+    if user is not None and user.is_active:
+        # Correct password, and the user is marked "active"
+        auth.login(request, user)
+        # Redirect to a success page.
+        return HttpResponseRedirect("/")
+    else:
+        # Show an error page
+        return render(request, "login.html")
 
 def show_register(request):
 	return render(request, 'register.html', {'time': datetime.now() })
