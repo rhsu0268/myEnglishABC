@@ -17,8 +17,11 @@
             <section class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu role="menubar">
                     <li class="menu-text">myEnglishABC</li>
-                    <li><a href="/">Home</a></li>
                     {% if user.is_authenticated %}
+                    <li><a href="/">Info</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li><a href="/">Home</a></li>
                     <li><a href="/dictionary">Dictionary</a></li>
                     <li class="has-submenu">
                         <a href="#">Courses</a>

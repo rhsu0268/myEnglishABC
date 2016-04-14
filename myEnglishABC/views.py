@@ -39,10 +39,10 @@ def login(request):
         # Correct password, and the user is marked "active"
         auth.login(request, user)
         # Redirect to a success page.
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/home")
     else:
         # Show an error page
-        return render(request, "login.html")
+        return render(request, "login/login.html")
 
 def show_register(request):
 	return render(request, 'register.html', {'time': datetime.now() })
@@ -52,7 +52,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect("/")
+            return HttpResponseRedirect("/home")
     else:
         form = UserCreationForm()
     return render(request, "registration/register.html", {'form': form})
@@ -78,3 +78,6 @@ def logout(request):
     auth.logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect("/")
+
+def home(request):
+	return render(request, 'home.html')
