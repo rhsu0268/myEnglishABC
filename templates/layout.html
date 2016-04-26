@@ -18,10 +18,7 @@
                 <ul class="dropdown menu" data-dropdown-menu role="menubar">
                     <li class="menu-text">myEnglishABC</li>
                     {% if user.is_authenticated %}
-                    <li><a href="/">Info</a></li>
-                    {% endif %}
-                    {% if user.is_authenticated %}
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <li><a href="/dictionary">Dictionary</a></li>
                     <li class="has-submenu">
                         <a href="#">Courses</a>
@@ -30,6 +27,8 @@
                             <li><a href="{% url 'video:index' %}">See all &rarr;</a></li>
                         </ul>
                     </li>
+                    {% else %}
+                    <li><a href="/">Info</a></li>
                     {% endif %}
                 </ul>
             </section>
