@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'video.apps.VideoConfig',
     'dictionary.apps.DictionaryConfig',
+    'tutor.apps.TutorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
