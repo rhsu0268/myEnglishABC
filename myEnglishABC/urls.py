@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),
     url(r'^suggest/$', views.suggestion_view, name='suggestion'),
-    url(r'^tutor/$', include('tutor.urls', namespace='tutor')),
+    url(r'^tutor/', include('tutor.urls', namespace='tutor')),
     url(r'^admin/', admin.site.urls),
 ]
 
