@@ -25,7 +25,8 @@ $( "#translate_text" ).click(function() {
    			$.each( data.data.translations, function( i, item ) {
         		//$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
         		console.log(item);
-        		$("#result").append("<li>" + item.translatedText + "</li>");
+            console.log("Test");
+        		$("#result").append("<li>" + item.translatedText + "<a href='#'" + "class='button'>" + "Save" + "</a></li>");
 
       		});
     	});
