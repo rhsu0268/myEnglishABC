@@ -25,11 +25,26 @@ $( "#translate_text" ).click(function() {
    			$.each( data.data.translations, function( i, item ) {
         		//$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
         		console.log(item);
-            console.log("Test");
-        		$("#result").append("<li>" + item.translatedText + "<a href='#'" + "class='button'>" + "Save" + "</a></li>");
+            var id = makeId();
+            console.log(id);
+
+        		$("#result").append("<li>" + item.translatedText + "<a href='#'" + "class='button' id=" + id + ">" + "Save" + "</a></li>");
 
       		});
     	});
     }
 	
 });
+
+
+function makeId()
+{
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+  for (var i = 0; i < 5; i++)
+  {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}

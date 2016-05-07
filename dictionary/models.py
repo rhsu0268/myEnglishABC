@@ -8,7 +8,7 @@ from django.utils import timezone
 class Sentence(models.Model):
     sentence_text = models.CharField(max_length=2000)
     pub_date = models.DateTimeField('date published')
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, default="")
 
     def __str__(self):
     	return self.sentence_text
