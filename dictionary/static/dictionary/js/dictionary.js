@@ -22,7 +22,7 @@ $( "#translate_text" ).click(function() {
     	.done(function( data ) {
    			console.log(data);
 
-   			$('#result').append("<ul id='sentence_list'></ul>");
+   			$('#result').append("<ul id='sentence_list'>");
 
    			$.each( data.data.translations, function( i, item ) {
         		//$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
@@ -30,9 +30,11 @@ $( "#translate_text" ).click(function() {
             var id = makeId();
             console.log(id);
 
-        		$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + "onClick='saveSentence(this.id)'>" + "Save" + "</a></li>");
-
+        		$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + "onClick='saveSentence(" + id + ")'>" + "Save" + "</button></li>");
+            //$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + ">" + "Save" + "</button></li>");
       		});
+
+        $('#result').append("</ul>");
     	});
     }
 	
@@ -51,9 +53,13 @@ function makeId()
   return text;
 }
 
-function saveSentence(button_id)
+function saveSentence(id)
 {
   console.log("saveSentence");
-  window.location.href = '/saveSentence/' + button_id;
+  console.log(id);
+  var id = id.getAttribute("id");
+  console.log(id);
+  window.location.href = 'saveSentence/' + id;
 
 }
+
