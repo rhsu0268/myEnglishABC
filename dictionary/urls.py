@@ -6,5 +6,6 @@ app_name = 'dictionary'
 urlpatterns = [
 
     url(r'^$', views.index, name='index'),
+    url(r'^savedSentence/$', views.saveSentence),
     url(r'^(?P<sentence_id>[0-9]+)/$', views.detail, name='detail'),
 ]
