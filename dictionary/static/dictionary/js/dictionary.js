@@ -30,7 +30,7 @@ $( "#translate_text" ).click(function() {
             var id = makeId();
             console.log(id);
 
-        		$("#result").append("<li>" + item.translatedText + "<a href='#'" + "class='button' id=" + id + ">" + "Save" + "</a></li>");
+        		$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + "onClick='saveSentence(this.id)'>" + "Save" + "</a></li>");
 
       		});
     	});
@@ -49,4 +49,11 @@ function makeId()
     text += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return text;
+}
+
+function saveSentence(button_id)
+{
+  console.log("saveSentence");
+  window.location.href = '/saveSentence/' + button_id;
+
 }
