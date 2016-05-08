@@ -23,5 +23,9 @@ def saveSentence(request):
 	resp = "The sentence has been saved!"
 	return HttpResponse(resp)
 
+def showWords(request):
+	resp = "These are your saved words!"
+	return HttpResponse(resp)
+
 def detail(request, sentence_id):
 	return HttpResponse("You are loking at sentence %s." % sentence_id)
