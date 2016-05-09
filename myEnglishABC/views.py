@@ -15,7 +15,7 @@ from . import forms
 from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
-
+from django.core.mail import send_mail
 
 def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
@@ -81,3 +81,35 @@ def logout(request):
 
 def home(request):
 	return render(request, 'home.html')
+
+
+def contact(request):
+    errors = []
+    if request.method == 'POST':
+        if not request.POST.get('subject', ''):
+            errors.append('Enter a subject.')
+        if not request.POST.get('message', ''):
+            errors.append('Enter a message.')
+        if request.POST.get('email') and '@' not in request.POST['email']:
+            errors.append('Enter a valid e-mail address.')
+        if not errors:
+            send_mail(
+                request.POST['subject'],
+                request.POST['message'],
+                request.POST.get('email', 'rhsu0268@gmail.com'),
+                ['rhsu0268@gmail.com'],
+            )
+            return HttpResponseRedirect('/contact/thanks')
+    return render(request, 'contact_form.html', {'errors': errors})
+
+
+
+
+
+
+
+
+
+
+
+

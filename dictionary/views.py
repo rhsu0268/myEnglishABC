@@ -33,11 +33,11 @@ def saveSentence(request):
 	sentence.save()
 
 	resp = "The sentence has been saved!"
-	return HttpResponse(resp)
+	return HttpResponseRedirect('dictionary/saved_sentence.html')
 
 def showWords(request):
 	resp = "These are your saved words!"
-	return HttpResponse(resp)
+	return render(request, 'dictionary/saved_sentence.html')
 
 def detail(request, sentence_id):
 	return HttpResponse("You are loking at sentence %s." % sentence_id)
