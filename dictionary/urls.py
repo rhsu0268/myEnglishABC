@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^savedSentence/$', views.saveSentence),
     url(r'^saveSentence/[a-zA-Z0-9]{5,}$', views.saveSentence),
     url(r'^savedWords/$', views.showWords),
+    url(r'^saveWord/$', views.saveWord),
     url(r'^(?P<sentence_id>[0-9]+)/$', views.detail, name='detail'),
 ]

@@ -43,3 +43,13 @@ def showWords(request):
 
 def detail(request, sentence_id):
 	return HttpResponse("You are loking at sentence %s." % sentence_id)
+
+def saveWord(request):
+    now = datetime.datetime.now()
+    current_user = request.user
+    resp = "The word has successfully been saved!"
+    if request.is_ajax():
+        if request.method == 'POST':
+            sentence = Sentence(sentence_text=request.POST.get('text'), pub_date=now, user=current_user)
+            sentence.save()
+            return HttpResponse(resp)
