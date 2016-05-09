@@ -16,6 +16,7 @@ from django.contrib import auth
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
+from django.contrib.auth.models import User
 
 def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
@@ -80,7 +81,19 @@ def logout(request):
     return HttpResponseRedirect("/")
 
 def home(request):
+    #print(request.user)
 	return render(request, 'home.html')
+
+def updateUser(request):
+    # get the user
+    user = User.objects.get(pk=request.user.id)
+    print(user)
+    if request.method == 'POST':
+        user.firstName = request.POST['firstName']
+        user.lastName = request.POST['lastName']
+        user.save()
+        print(user)
+        return HttpResponseRedirect('/home')
 
 
 def contact(request):

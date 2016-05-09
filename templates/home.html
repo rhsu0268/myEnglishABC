@@ -13,9 +13,9 @@
     <div class="row">
         <h1>Update your profile</h1>
 
-        <form action="/update_profile/" method="post">
-			<p>First Name: <input type="text" name="first-name"></p>
-			<p>Last Name:  <input type="text" name="last-name"></p>
+        <form action="/updateUser/" method="post">
+			<p>First Name: <input type="text" name="firstName"></p>
+			<p>Last Name:  <input type="text" name="lastName"></p>
 			{% csrf_token %}
 			<input type="submit" class="button" value="Submit">
 		</form>

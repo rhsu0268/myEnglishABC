@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^login/', views.login),
     url(r'^home/', views.home),
+    url(r'^updateUser/', views.updateUser),
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
