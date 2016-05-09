@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import loader
 from dictionary.models import Sentence
 
@@ -33,7 +34,8 @@ def saveSentence(request):
 	sentence.save()
 
 	resp = "The sentence has been saved!"
-	return HttpResponseRedirect('dictionary/saved_sentence.html')
+	return render(request, 'dictionary/saved_sentence.html')
+	#return HttpResponseRedirect('dictionary/saveSentence')
 
 def showWords(request):
 	resp = "These are your saved words!"
