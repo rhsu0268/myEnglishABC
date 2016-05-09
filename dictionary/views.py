@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.shortcuts import HttpResponse
 from django.shortcuts import loader
+from dictionary.models import Sentence
+
+import datetime
 # Create your views here.
 
 def index(request):
@@ -20,6 +23,15 @@ def saveSentence(request):
 	# else:
 	# 	message = 'You submitted an empty form.'
 	# return HttpResponse(message)
+
+	now = datetime.datetime.now()
+	current_user = request.user
+
+
+	sentence = Sentence(sentence_text="hello", pub_date=now, user=current_user)
+
+	sentence.save()
+
 	resp = "The sentence has been saved!"
 	return HttpResponse(resp)
 
