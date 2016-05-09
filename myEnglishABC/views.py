@@ -89,11 +89,12 @@ def updateUser(request):
     user = User.objects.get(pk=request.user.id)
     print(user)
     if request.method == 'POST':
-        user.firstName = request.POST['firstName']
-        user.lastName = request.POST['lastName']
-        user.save()
-        print(user)
-        return HttpResponseRedirect('/home')
+        user.first_name = request.POST['firstName']
+        user.last_name = request.POST['lastName']
+        user.save(update_fields=['first_name', 'last_name'])
+        print(user.first_name)
+        fetchedUser = User.objects.get(pk=request.user.id)
+        return HttpResponseRedirect('/home', {'fetchedUser': fetchedUser})
 
 
 def contact(request):
