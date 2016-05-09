@@ -82,7 +82,8 @@ def logout(request):
 
 def home(request):
     #print(request.user)
-	return render(request, 'home.html')
+    fetchedUser = User.objects.get(pk=request.user.id)
+    return render(request, 'home.html', { 'fetchedUser': fetchedUser })
 
 def updateUser(request):
     # get the user
@@ -93,8 +94,11 @@ def updateUser(request):
         user.last_name = request.POST['lastName']
         user.save(update_fields=['first_name', 'last_name'])
         print(user.first_name)
-        fetchedUser = User.objects.get(pk=request.user.id)
+        fetchedUser = getUpdatedUser(request)
         return HttpResponseRedirect('/home', {'fetchedUser': fetchedUser})
+
+def getUpdatedUser(request):
+    return User.objects.get(pk=request.user.id)
 
 
 def contact(request):
