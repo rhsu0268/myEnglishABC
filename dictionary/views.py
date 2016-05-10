@@ -39,7 +39,8 @@ def saveSentence(request):
 
 def showWords(request):
 	resp = "These are your saved words!"
-	return render(request, 'dictionary/saved_sentence.html')
+	sentences = Sentence.objects.all()
+	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
 
 def detail(request, sentence_id):
 	return HttpResponse("You are loking at sentence %s." % sentence_id)
