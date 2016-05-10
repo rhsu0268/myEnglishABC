@@ -1,11 +1,12 @@
 console.log("On the dictionary page!");
 
 
+var sentence;
 
 $( "#translate_text" ).click(function() {
 	console.log("Translate button is clicked!");
 
-	var sentence = $('#sentence').val();
+	sentence = $('#sentence').val();
 	console.log(sentence);
 	if (!sentence || sentence == "" || sentence == "Enter your sentence here.")
 	{
@@ -72,7 +73,7 @@ $( '#say_text' ).click(function() {
 
     url: "/dictionary/saveWord/",
     type: "POST",
-    data: { text: "test", 
+    data: { text: sentence, 
             csrfmiddlewaretoken: csrftoken
     }
 
