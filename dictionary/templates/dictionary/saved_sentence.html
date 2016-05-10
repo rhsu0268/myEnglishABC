@@ -9,31 +9,19 @@
 	<table>
 	  <thead>
 	    <tr>
-	      <th width="200">Table Header</th>
-	      <th>Table Header</th>
-	      <th width="150">Table Header</th>
-	      <th width="150">Table Header</th>
+	      <th width="200">Word/Sentence</th>
+	      <th width="200">Chinese Translation</th>
+	      <th width="200">Say It</th>
 	    </tr>
 	  </thead>
 	  <tbody>
+	  	{% for sentence in sentences %}
 	    <tr>
-	      <td>Content Goes Here</td>
+	      <td>{{ sentence.sentence_text }}</td>
 	      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
 	      <td>Content Goes Here</td>
-	      <td>Content Goes Here</td>
 	    </tr>
-	    <tr>
-	      <td>Content Goes Here</td>
-	      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-	      <td>Content Goes Here</td>
-	      <td>Content Goes Here</td>
-	    </tr>
-	    <tr>
-	      <td>Content Goes Here</td>
-	      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-	      <td>Content Goes Here</td>
-	      <td>Content Goes Here</td>
-	    </tr>
+	    {% endfor %}
 	  </tbody>
 	</table>
 </div>
