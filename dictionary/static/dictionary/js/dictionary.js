@@ -31,7 +31,7 @@ $( "#translate_text" ).click(function() {
             var id = makeId();
             console.log(id);
 
-        		$("#result").append("<li>" + item.translatedText + "<button type='button save'" + "class='button' id='" + id + "'" + "onClick='saveSentence(" + id + ")'>" + "Save" + "</button></li>");
+        		$("#result").append("<li>" + item.translatedText + "</li>");
             //$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + ">" + "Save" + "</button></li>");
       		});
 
@@ -65,7 +65,7 @@ function saveSentence(id)
 }
 
 var csrftoken = getCookie('csrftoken');
-$( '#say_text' ).click(function() {
+$( '#save_word' ).click(function() {
 
   console.log("SAVE BUTTON CLICKED!");
 
