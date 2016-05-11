@@ -7,6 +7,7 @@ from django.utils import timezone
 
 class Sentence(models.Model):
     sentence_text = models.CharField(max_length=2000)
+    chinese_text = models.CharField(max_length=2000, default="")
     pub_date = models.DateTimeField('date published')
     user = models.ForeignKey(User, default="")
 

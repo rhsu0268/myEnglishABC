@@ -31,7 +31,7 @@ $( "#translate_text" ).click(function() {
             var id = makeId();
             console.log(id);
 
-        		$("#result").append("<li>" + item.translatedText + "</li>");
+        		$("#result").append("<li class='translation' >" + item.translatedText + "</li>");
             //$("#result").append("<li>" + item.translatedText + "<button type='button'" + "class='button' id='" + id + "'" + ">" + "Save" + "</button></li>");
       		});
 
@@ -72,11 +72,15 @@ $( '#save_word' ).click(function() {
 
   console.log("SAVE BUTTON CLICKED!");
 
+  var chinese_text = $( ".translation").text();
+  console.log(chinese_text);
+
   $.ajax({
 
     url: "/dictionary/saveWord/",
     type: "POST",
     data: { text: sentence, 
+            chinese_text: chinese_text,
             csrfmiddlewaretoken: csrftoken
     }
 
