@@ -36,6 +36,9 @@ $( "#translate_text" ).click(function() {
       		});
 
         $('#result').append("</ul>");
+
+
+        $('#save_word').css('visibility',"visible");
     	});
     }
 	
