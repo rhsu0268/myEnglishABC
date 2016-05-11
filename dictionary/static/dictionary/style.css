@@ -1,8 +1,12 @@
 h1
 {
     color: green;
+    background-color: red;
 }
 
-#top: {
-	padding: 50px;
+body
+{
+	color: blue;
+	background-color: red;
 }
+

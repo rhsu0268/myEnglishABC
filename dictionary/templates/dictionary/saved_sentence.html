@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
+{% load staticfiles %}
 
 
 {% block title %}Saved Sentences{% endblock %}
 
-<link rel="stylesheet" href="../static/dictionary/saved_words.css">
+
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'dictionary/style.css' %}" >
 <div class="row">
 	<h1 id="saved_word_title">These are your saved sentences/words:</h1>
 	<table>
@@ -28,7 +30,7 @@
 	</table>
 </div>
 
-<script src="../static/dictionary/js/jquery.js"></script>
-<script src="../static/dictionary/js/dictionary.js"></script>
+<!--<script src="../static/dictionary/js/jquery.js"></script>-->
+<!--<script src="../static/dictionary/js/dictionary.js"></script>-->
 
 {% endblock %}
