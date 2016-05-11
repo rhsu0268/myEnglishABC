@@ -16,14 +16,16 @@
 	      <th width="200">Word/Sentence</th>
 	      <th width="200">Chinese Translation</th>
 	      <th width="200">Say It</th>
+	      <th width="200">Delete</th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	{% for sentence in sentences %}
 	    <tr>
 	      <td>{{ sentence.sentence_text }}</td>
-	      <td>{{ sentence.translated_text }}</td>
-	      <td>Content Goes Here</td>
+	      <td>{{ sentence.chinese_text }}</td>
+	      <td><a href="#" class="button success">Say It</a></td>
+	      <td><a href="#" class="button alert">Delete</a></td>
 	    </tr>
 	    {% endfor %}
 	  </tbody>
