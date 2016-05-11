@@ -1,3 +1,4 @@
+/*
 h1
 {
     color: green;
@@ -8,5 +9,11 @@ body
 {
 	color: blue;
 	background-color: red;
+}
+*/
+
+#save_word
+{
+	visibility: hidden;
 }
 
