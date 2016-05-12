@@ -15,6 +15,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 import os
 from os.path import abspath, dirname
+import random, string
 #import pygame
 
 
@@ -77,6 +78,13 @@ def saveWord(request):
             #f = open('hello.mp3')
             #audio_file = File(f)
 
+            # make a string for the filename
+            id_string = makeId()
+            print(id_string)
+            #tts = gTTS(text=text, lang='en')
+            #tts.save("hello-1.mp3")
+
+
             sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, pub_date=now, user=current_user)
             sentence.save()
             #sentence.text_recording.save('new', audio_file)
@@ -109,3 +117,9 @@ def sayWord(request, id):
     response['Content-Length'] =os.path.getsize(fname )
     return response
     #return render(request, 'dictionary/saved_sentence.html')
+
+
+def makeId():
+
+    length = 5
+    return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(5)])
