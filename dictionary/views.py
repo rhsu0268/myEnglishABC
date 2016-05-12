@@ -15,6 +15,7 @@ from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 import os
 from os.path import abspath, dirname
+#import pygame
 
 
 def index(request):
@@ -87,3 +88,24 @@ def saveWord(request):
 def makeAudio(text):
 	tts = gTTS(text=text, lang='en')
 	tts.save("hello-test.mp3")
+
+def sayWord(request, id):
+	#mixer.init()
+	#mixer.music.load('hello.mp3')
+	#mixer.music.play()
+	# sentences = Sentence.objects.all()
+	# for sentence in sentences:
+	# 	# unicode_text = sentence.chinese_text.encode('unicode-escape')
+	# 	# print(unicode_text)
+	# 	sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
+	# 	print(sentence.chinese_text)
+	# return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
+    print(id)
+    fname="hello-2.mp3"
+    f = open(fname,"rb") 
+    response = HttpResponse()
+    response.write(f.read())
+    response['Content-Type'] ='audio/mp3'
+    response['Content-Length'] =os.path.getsize(fname )
+    return response
+    #return render(request, 'dictionary/saved_sentence.html')

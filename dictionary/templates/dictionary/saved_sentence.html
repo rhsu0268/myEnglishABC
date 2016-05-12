@@ -24,7 +24,10 @@
 	    <tr>
 	      <td>{{ sentence.sentence_text }}</td>
 	      <td>{{ sentence.chinese_text }}</td>
-	      <td><a href="#" class="button success">Say It</a></td>
+	      <td>
+	      	
+	      	<a href="/dictionary/sayWord/{{ sentence.id }}" id="{{ sentence.id }}"class="button success">Say It</a>
+	      </td>
 	      <td><a href="#" class="button alert">Delete</a></td>
 	    </tr>
 	    {% endfor %}
@@ -33,6 +36,8 @@
 </div>
 
 <!--<script src="../static/dictionary/js/jquery.js"></script>-->
-<script src="../static/dictionary/js/saved_sentence.js"></script>
+<!--<script src="../static/dictionary/js/saved_sentence.js"></script>-->
+<script type="text/javascript" src="{% static 'dictionary/js/saved_sentence.js' %}"></script>
 
 {% endblock %}
+
