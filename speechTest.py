@@ -11,12 +11,17 @@
 # engine.runANdWait()
 
 from gtts import gTTS
+from tempfile import TemporaryFile
 tts = gTTS(text='Hello', lang='en')
 tts.save("hello-1.mp3")
 
+# f = TemporaryFile()
+# tts.write_to_fp(f)
+# f.close()
 
-tts2 = gTTS(text='Hello, my name is Richard Hsu. The red fox jumped over the red cow and sstx.', lang='en')
-tts2.save("hello-2.mp3")
+
+#tts2 = gTTS(text='Hello, my name is Richard Hsu. The red fox jumped over the red cow and sstx.', lang='en')
+#tts2.save("hello-2.mp3")
 
 # tts3 = gTTS(text='Hello, my name is Richard Hsu. I am a graduate student at GW.', lang='zh')
 # tts3.save("hello-3.mp3")

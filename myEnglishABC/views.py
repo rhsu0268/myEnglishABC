@@ -18,6 +18,7 @@ from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.contrib.auth.models import User
 
+
 def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
    return render(request, 'index.html', {'time': datetime.now() })

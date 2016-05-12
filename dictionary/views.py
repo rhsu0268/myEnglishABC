@@ -7,6 +7,16 @@ from dictionary.models import Sentence
 import datetime
 # Create your views here.
 
+
+from gtts import gTTS
+from tempfile import TemporaryFile
+from django.core.files import File
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+from os.path import abspath, dirname
+
+
 def index(request):
     #return HttpResponse("Hello, world. You are at the dictionary index.")
     #template = loader.get_template('dictionary/index.html')
@@ -60,6 +70,20 @@ def saveWord(request):
             unicode_text = chinese_text.encode('unicode-escape')
             print(unicode_text)
             print(unicode_text.decode('unicode-escape'))
+            text = request.POST.get('text')
+            #makeAudio(text)
+            #print(abspath(dirname('hello.mp3')))
+            #f = open('hello.mp3')
+            #audio_file = File(f)
+
             sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, pub_date=now, user=current_user)
             sentence.save()
+            #sentence.text_recording.save('new', audio_file)
+            #audio_fiel.close()
+
+            #sentence.text_recording.save('test.mp3', f2, save=False)
             return HttpResponse(resp)
+
+def makeAudio(text):
+	tts = gTTS(text=text, lang='en')
+	tts.save("hello-test.mp3")
