@@ -181,3 +181,8 @@ Deleting all tables in the database
 python manage.py flush
 ```
 
+Start SQL Console
+
+```
+mysql -u root -p
+```

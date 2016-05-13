@@ -9,10 +9,10 @@ from django.utils import timezone
 fs = FileSystemStorage(location='/saved_words')
 
 class Sentence(models.Model):
-    sentence_text = models.CharField(max_length=2000)
+    sentence_text = models.CharField(max_length=2000, default="")
     chinese_text = models.CharField(max_length=2000, default="")
-    text_recording = models.FileField(max_length=2000, upload_to='saved_words', default="")
-    pub_date = models.DateTimeField('date published')
+    audio_filename = models.CharField(max_length=200, default="")
+    pub_date = models.DateTimeField('date published', default="")
     user = models.ForeignKey(User, default="")
 
     def __str__(self):
@@ -27,3 +27,4 @@ class Sentence(models.Model):
     # 	if commit:
     # 		instance.save()
     # 	return instance
+

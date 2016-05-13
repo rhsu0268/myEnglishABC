@@ -81,11 +81,13 @@ def saveWord(request):
             # make a string for the filename
             id_string = makeId()
             print(id_string)
+            file_string = 'audio-' + id_string + '.mp3'
+            print(file_string)
             #tts = gTTS(text=text, lang='en')
             #tts.save("hello-1.mp3")
 
 
-            sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, pub_date=now, user=current_user)
+            sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, audio_file_name=file_string, pub_date=now, user=current_user)
             sentence.save()
             #sentence.text_recording.save('new', audio_file)
             #audio_fiel.close()
