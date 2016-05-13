@@ -124,6 +124,20 @@ def sayWord(request, id):
     return response
     #return render(request, 'dictionary/saved_sentence.html')
 
+def deleteWord(request, id):
+    word = Sentence.objects.get(pk=id)
+
+    # delete the word
+    word.delete()
+
+    sentences = Sentence.objects.all()
+    for sentence in sentences:
+        # unicode_text = sentence.chinese_text.encode('unicode-escape')
+        # print(unicode_text)
+        sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
+        print(sentence.chinese_text)
+    return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
+
 
 def makeId():
 

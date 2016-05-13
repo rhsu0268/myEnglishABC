@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^savedWords/$', views.showWords),
     url(r'^saveWord/$', views.saveWord),
     url(r'^sayWord/(?P<id>\d+)/$', views.sayWord),
+    url(r'^deleteWord/(?P<id>\d+)/$', views.deleteWord),
     url(r'^(?P<sentence_id>[0-9]+)/$', views.detail, name='detail'),
 ]
