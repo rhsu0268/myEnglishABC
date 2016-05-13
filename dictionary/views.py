@@ -83,11 +83,11 @@ def saveWord(request):
             print(id_string)
             file_string = 'audio-' + id_string + '.mp3'
             print(file_string)
-            #tts = gTTS(text=text, lang='en')
-            #tts.save("hello-1.mp3")
+            tts = gTTS(text=text, lang='en')
+            tts.save(file_string)
 
 
-            sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, audio_file_name=file_string, pub_date=now, user=current_user)
+            sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, audio_filename=file_string, pub_date=now, user=current_user)
             sentence.save()
             #sentence.text_recording.save('new', audio_file)
             #audio_fiel.close()
@@ -111,7 +111,11 @@ def sayWord(request, id):
 	# 	print(sentence.chinese_text)
 	# return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
     print(id)
-    fname="hello-2.mp3"
+    audio_file = Sentence.objects.get(pk=id)
+    print(audio_file)
+    print(audio_file.audio_filename)
+
+    fname=audio_file.audio_filename
     f = open(fname,"rb") 
     response = HttpResponse()
     response.write(f.read())
