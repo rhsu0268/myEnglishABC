@@ -84,8 +84,11 @@ def logout(request):
 def home(request):
     #print(request.user)
     fetchedUser = User.objects.get(pk=request.user.id)
-    return render(request, 'home.html', { 'fetchedUser': fetchedUser })
-
+    print(fetchedUser)
+    if fetchedUser:
+        return render(request, 'home.html', { 'fetchedUser': fetchedUser })
+    else:
+        return render(request, 'home.html', {})
 def updateUser(request):
     # get the user
     user = User.objects.get(pk=request.user.id)
