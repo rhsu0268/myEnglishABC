@@ -125,7 +125,8 @@ def contact(request):
     return render(request, 'contact_form.html', {'errors': errors})
 
 
-
+def login_error():
+    return render(request, 'login_error.html')
 
 
 

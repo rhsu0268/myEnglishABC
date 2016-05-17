@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^updateUser/', views.updateUser),
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
+    url(r'^login_error/', views.login_error),
     url(r'^dictionary/', include('dictionary.urls', namespace='dictionary')),
     url(r'^video/', include('video.urls', namespace='video')),
     url(r'^suggest/$', views.suggestion_view, name='suggestion'),

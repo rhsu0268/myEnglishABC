@@ -1,0 +1,100 @@
+<!doctype html>
+{% load static from staticfiles %}
+{% load video_extras %}
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+        {% block css %}{% endblock %}
+        <script src="{% static 'js/vendor/modernizr.js' %}"></script>
+        <meta class="foundation-mq">
+    </head>
+    <body>
+    	<!--
+        <nav class="top-bar" role="navigation">
+            <section class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu role="menubar">
+                    <li class="menu-text">myEnglishABC</li>
+                    {% if user.is_authenticated %}
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dictionary">Dictionary</a></li>
+                    <li><a href="/dictionary/savedWords">Saved Words</a></li>
+                    <li><a href="/video">Video</a></li>
+                    <!--
+                    <li class="has-submenu">
+                        <a href="#">Courses</a>
+                        <ul class="submenu menu vertical" data-submenu role="menu">
+                            {% nav_videos_list %}
+                            <li><a href="{% url 'video:index' %}">See all &rarr;</a></li>
+                        </ul>
+                    </li>
+                   -->
+                    <!--
+                    <li><a href="/tutor">Tutor</a></li>
+                    {% else %}
+                    <li><a href="/">Info</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    {% if user.is_authenticated %}
+                    <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    	-->
+    	<div class="row">
+    		<h1 align="center">Error!</h1>
+
+    		<p align="center"><img src="/static/images/error.png" alt="image for article" alt="article preview image" width="400" height="400"></p>
+
+    		<h2 align="center">You must be logged in to see that page!</h2>
+    	</div>
+        {% if messages %}
+            <div class="row">
+                <div class="small-6 small-centered columns">
+                    {% for message in messages %}
+                        <div data-alert class="callout {{ message.tags }}">
+                            {{ message }}
+                            <a href="#" class="close">&times;</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+        <footer class="row columns">
+            <hr/>
+            <div class="small-6 columns">
+                <p>&copy; myEnglishABC</p>
+            </div>
+            <div class="small-6 columns">
+                <ul class="inline-list no-bullet float-right">
+                    <li><a href="{% url 'video:index' %}">Video</a></li>
+                </ul>
+            </div>
+        </footer>
+        <!--
+        <script src="{% static 'js/vendor/jquery-2.1.4.min.js' %}"></script>
+        <script src="{% static 'js/vendor/what-input.min.js' %}"></script>
+        <script src="{% static 'js/foundation.min.js' %}"></script>
+        {% block javascript %}{% endblock %}
+        <script>$(document).foundation();</script>
+        -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+        <script>
+              $(document).foundation();
+            </script>
+        <script type="text/javascript" src="https://intercom.zurb.com/scripts/zcom.js"></script>
+    </body>
+</html>

@@ -24,7 +24,10 @@ def index(request):
     #template = loader.get_template('dictionary/index.html')
     #context = {}
     #return HttpResponse(template.render(context, request))
-    return render(request, 'dictionary/index.html')
+    if request.user.is_authenticated():
+        return render(request, 'dictionary/index.html')
+    else:
+        return render(request, 'login_error.html')
 
 def saveSentence(request):
 	# if 'sentence' in request.GET and request.GET['sentence']:
@@ -143,3 +146,5 @@ def makeId():
 
     length = 5
     return ''.join([random.choice(string.ascii_letters + string.digits) for n in range(5)])
+
+
