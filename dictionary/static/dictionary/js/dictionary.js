@@ -6,11 +6,14 @@ var sentence;
 $( "#translate_text" ).click(function() {
 	console.log("Translate button is clicked!");
 
+  $('#result').html('');
+
 	sentence = $('#sentence').val();
 	console.log(sentence);
 	if (!sentence || sentence == "" || sentence == "Enter your sentence here.")
 	{
 		console.log("Please enter some text!");
+    $('#blank-error-message').css('display',"inline");
 		return;
 	}
 	else 
@@ -71,6 +74,10 @@ var csrftoken = getCookie('csrftoken');
 $( '#save_word' ).click(function() {
 
   console.log("SAVE BUTTON CLICKED!");
+  if (chinese_test == "")
+  {
+    return;
+  }
 
   var chinese_text = $( ".translation").text();
   console.log(chinese_text);

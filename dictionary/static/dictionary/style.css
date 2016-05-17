@@ -17,3 +17,7 @@ body
 	visibility: hidden;
 }
 
+#blank-error-message
+{
+	display: none;
+}
