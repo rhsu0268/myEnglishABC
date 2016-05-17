@@ -74,7 +74,7 @@ var csrftoken = getCookie('csrftoken');
 $( '#save_word' ).click(function() {
 
   console.log("SAVE BUTTON CLICKED!");
-  if (chinese_test == "")
+  if (chinese_text == "")
   {
     return;
   }
