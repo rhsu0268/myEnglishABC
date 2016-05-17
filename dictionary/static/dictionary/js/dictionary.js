@@ -7,6 +7,7 @@ $( "#translate_text" ).click(function() {
 	console.log("Translate button is clicked!");
 
   $('#result').html('');
+  $('#blank-error-message').css('display',"none");
 
 	sentence = $('#sentence').val();
 	console.log(sentence);
