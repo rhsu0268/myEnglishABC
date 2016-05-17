@@ -12,10 +12,12 @@ from .models import Video
 
 def index(request):
     #return HttpResponse("Hello, world. You are at the dictionary index.")
-
-    videos = Video.objects.all()
-    #output = ', '.join([str(video) for video in videos])
-    return render(request, 'video/index.html', {'videos': videos })
+    if request.user.is_authenticated():
+        videos = Video.objects.all()
+        #output = ', '.join([str(video) for video in videos])
+        return render(request, 'video/index.html', {'videos': videos })
+    else:
+        return render(request, 'login_error.html')
     #template = loader.get_template('video/index.html')
     #context = {}
     #return HttpResponse(template.render(context, request))

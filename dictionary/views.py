@@ -53,14 +53,17 @@ def saveSentence(request):
 	#return HttpResponseRedirect('dictionary/saveSentence')
 
 def showWords(request):
-	resp = "These are your saved words!"
-	sentences = Sentence.objects.all()
-	for sentence in sentences:
-		# unicode_text = sentence.chinese_text.encode('unicode-escape')
-		# print(unicode_text)
-		sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
-		print(sentence.chinese_text)
-	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
+    if request.user.is_authenticated():
+    	resp = "These are your saved words!"
+    	sentences = Sentence.objects.all()
+    	for sentence in sentences:
+    		# unicode_text = sentence.chinese_text.encode('unicode-escape')
+    		# print(unicode_text)
+    		sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
+    		print(sentence.chinese_text)
+    	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
+    else:
+        return render(request, 'login_error.html')
 
 def detail(request, sentence_id):
 	return HttpResponse("You are loking at sentence %s." % sentence_id)

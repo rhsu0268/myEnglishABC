@@ -34,16 +34,30 @@ def index(request):
 
 def login(request):
 
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    user = auth.authenticate(username=username, password=password)
-    if user is not None and user.is_active:
+    
+    if request.method == 'POST':
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        if (not username or not password):
+            error = "Sorry, you must fill in both fields!"
+            return render(request, "login/login.html", {'error': error})
+        user = auth.authenticate(username=username, password=password)
+        if user is not None and user.is_active:
         # Correct password, and the user is marked "active"
-        auth.login(request, user)
-        # Redirect to a success page.
-        return HttpResponseRedirect("/home")
+            auth.login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect("/home")
+        else:
+            error = "Sorry, that's not a valid username or password!"
+            return render(request, "login/login.html", {'error': error})
     else:
         # Show an error page
+        #error = "Sorry, that's not a valid username or password!"
+        #print(error)
+        #form = {
+            #'form_errors': form 
+        #}
+        #return render(request, "login/login.html", {'error': error})
         return render(request, "login/login.html")
 
 def show_register(request):
