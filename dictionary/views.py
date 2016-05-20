@@ -75,7 +75,7 @@ def saveWord(request):
     #if request.is_ajax():
     #if request.method == 'POST':
     chinese_text = request.POST.get('chinese_text')
-    unicode_text = chinese_text.encode('unicode-escape')
+    #unicode_text = chinese_text.encode('unicode-escape')
         #print(unicode_text)
         #print(unicode_text.decode('unicode-escape'))
         #text = request.POST.get('text')
@@ -93,7 +93,7 @@ def saveWord(request):
         #tts.save(file_string)
 
 
-    sentence = Sentence(sentence_text="", chinese_text=unicode_text, audio_filename="", pub_date=now, user=current_user)
+    sentence = Sentence(sentence_text="", chinese_text="", audio_filename="", pub_date=now, user=current_user)
     sentence.save()
     #sentence.text_recording.save('new', audio_file)
     #audio_fiel.close()
