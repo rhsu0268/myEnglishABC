@@ -60,7 +60,7 @@ def showWords(request):
     		# unicode_text = sentence.chinese_text.encode('unicode-escape')
     		# print(unicode_text)
     		sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
-    		print(sentence.chinese_text)
+    		#print(sentence.chinese_text)
     	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
     else:
         return render(request, 'login_error.html')
