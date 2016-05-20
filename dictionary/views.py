@@ -72,8 +72,8 @@ def saveWord(request):
     now = datetime.datetime.now()
     current_user = request.user
     resp = "The word has successfully been saved!"
-    # if request.is_ajax():
-    #     if request.method == 'POST':
+    if request.is_ajax():
+        if request.method == 'POST':
     #         chinese_text = request.POST.get('chinese_text')
     #         #unicode_text = chinese_text.encode('unicode-escape')
     #         print(unicode_text)
@@ -99,7 +99,7 @@ def saveWord(request):
             #audio_fiel.close()
 
             #sentence.text_recording.save('test.mp3', f2, save=False)
-    return HttpResponse(resp)
+            return HttpResponse(resp)
 
 def makeAudio(text):
 	tts = gTTS(text=text, lang='en')
