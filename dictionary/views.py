@@ -59,8 +59,8 @@ def showWords(request):
     	for sentence in sentences:
     		# unicode_text = sentence.chinese_text.encode('unicode-escape')
     		# print(unicode_text)
-    		#sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
-            sentence.chinese_text = sentence.chinese_text.decode('unicode-escape')
+    		sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
+            #sentence.chinese_text = sentence.chinese_text.decode('unicode-escape')
     		#print(sentence.chinese_text)
     	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
     else:
@@ -79,22 +79,22 @@ def saveWord(request):
         unicode_text = chinese_text.encode('unicode-escape')
         #print(unicode_text)
         #print(unicode_text.decode('unicode-escape'))
-        #text = request.POST.get('text')
+        text = request.POST.get('text')
         #makeAudio(text)
         #print(abspath(dirname('hello.mp3')))
         #f = open('hello.mp3')
         #audio_file = File(f)
 
         # make a string for the filename
-        #id_string = makeId()
+        id_string = makeId()
         #print(id_string)
-        #file_string = 'audio-' + id_string + '.mp3'
+        file_string = 'audio-' + id_string + '.mp3'
         #print(file_string)
-        #tts = gTTS(text=text, lang='en')
-        #tts.save(file_string)
+        tts = gTTS(text=text, lang='en')
+        tts.save(file_string)
 
 
-        sentence = Sentence(sentence_text="", chinese_text=unicode_text, audio_filename="", pub_date=now, user=current_user)
+        sentence = Sentence(sentence_text=text, chinese_text=unicode_text, audio_filename="", pub_date=now, user=current_user)
         sentence.save()
         #sentence.text_recording.save('new', audio_file)
         #audio_fiel.close()
