@@ -100,6 +100,7 @@ def saveWord(request):
 
             #sentence.text_recording.save('test.mp3', f2, save=False)
             return HttpResponse(resp)
+    return HttpResponse(resp)
 
 def makeAudio(text):
 	tts = gTTS(text=text, lang='en')
