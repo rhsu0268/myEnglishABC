@@ -74,10 +74,10 @@ def saveWord(request):
     resp = "The word has successfully been saved!"
     if request.is_ajax():
         if request.method == 'POST':
-            chinese_text = request.POST.get('chinese_text')
-            unicode_text = chinese_text.encode('unicode-escape')
-            print(unicode_text)
-            print(unicode_text.decode('unicode-escape'))
+            #chinese_text = request.POST.get('chinese_text')
+            #unicode_text = chinese_text.encode('unicode-escape')
+            #print(unicode_text)
+            #print(unicode_text.decode('unicode-escape'))
             text = request.POST.get('text')
             #makeAudio(text)
             #print(abspath(dirname('hello.mp3')))
@@ -89,8 +89,8 @@ def saveWord(request):
             print(id_string)
             file_string = 'audio-' + id_string + '.mp3'
             print(file_string)
-            tts = gTTS(text=text, lang='en')
-            tts.save(file_string)
+            #tts = gTTS(text=text, lang='en')
+            #tts.save(file_string)
 
 
             sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text="", audio_filename=file_string, pub_date=now, user=current_user)
