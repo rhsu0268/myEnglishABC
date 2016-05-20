@@ -68,7 +68,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            auth.login(request, user)
+            auth.login(request, new_user)
             return HttpResponseRedirect("/home")
     else:
         form = UserCreationForm()
