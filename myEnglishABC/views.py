@@ -69,7 +69,7 @@ def register(request):
         if form.is_valid():
             new_user = form.save()
             #auth.login(request, new_user)
-            return HttpResponseRedirect("/home")
+            return HttpResponseRedirect("/login")
     else:
         form = UserCreationForm()
     return render(request, "registration/register.html", {'form': form})
