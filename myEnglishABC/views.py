@@ -69,7 +69,7 @@ def register(request):
         if form.is_valid():
             new_user = form.save()
             #auth.login(request, new_user)
-            return HttpResponseRedirect("/login")
+            return HttpResponseRedirect("/home")
     else:
         form = UserCreationForm()
     return render(request, "registration/register.html", {'form': form})
@@ -103,7 +103,7 @@ def home(request):
         return render(request, 'home.html', { 'fetchedUser': fetchedUser })
     except User.DoesNotExist:
         return render(request, 'home.html', {})
-        
+
 def updateUser(request):
     # get the user
     user = User.objects.get(pk=request.user.id)
