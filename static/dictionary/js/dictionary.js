@@ -86,7 +86,7 @@ $( '#save_word' ).click(function() {
 
   $.ajax({
 
-    url: "/dictionary/saveWord/",
+    url: "/saveWord/",
     type: "POST",
     data: { text: sentence, 
             chinese_text: chinese_text,
