@@ -82,6 +82,7 @@ $( '#save_word' ).click(function() {
 
   var chinese_text = $( ".translation").text();
   console.log(chinese_text);
+  console.log("Sentence" + sentence);
 
   $.ajax({
 
