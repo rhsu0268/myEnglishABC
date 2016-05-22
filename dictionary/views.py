@@ -120,18 +120,20 @@ def sayWord(request, id):
 	# 	sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
 	# 	print(sentence.chinese_text)
 	# return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
-    print(id)
-    audio_file = Sentence.objects.get(pk=id)
-    print(audio_file)
-    print(audio_file.audio_filename)
+    # print(id)
+    # audio_file = Sentence.objects.get(pk=id)
+    # print(audio_file)
+    # print(audio_file.audio_filename)
 
-    fname=audio_file.audio_filename
-    f = open(fname,"rb") 
-    response = HttpResponse()
-    response.write(f.read())
-    response['Content-Type'] ='audio/mp3'
-    response['Content-Length'] =os.path.getsize(fname )
-    return response
+    # fname=audio_file.audio_filename
+    # f = open(fname,"rb") 
+    # response = HttpResponse()
+    # response.write(f.read())
+    # response['Content-Type'] ='audio/mp3'
+    # response['Content-Length'] =os.path.getsize(fname )
+    if request.method == 'POST':
+        response = "hello"
+        return response
     #return render(request, 'dictionary/saved_sentence.html')
 
 def deleteWord(request, id):
