@@ -111,8 +111,8 @@ def makeAudio(text):
 
 def sayWord(request, id):
     if request.method == 'POST':
-        response = "hello"
-        return response
+        resp = "hello"
+        return HttpResponse(resp)
     #return render(request, 'dictionary/saved_sentence.html')
 
 def deleteWord(request, id):
