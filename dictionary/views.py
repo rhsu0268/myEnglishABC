@@ -77,11 +77,11 @@ def saveWord(request):
     resp = "The word has successfully been saved!"
     #if request.is_ajax():
     if request.method == 'POST':
-        #chinese_text = request.POST.get('chinese_text')
-        #unicode_text = chinese_text.encode('unicode-escape')
+        chinese_text = request.POST.get('chinese_text')
+        unicode_text = chinese_text.encode('utf-8')
         #print(unicode_text)
         #print(unicode_text.decode('unicode-escape'))
-        #text = request.POST.get('text')
+        text = request.POST.get('text')
         #makeAudio(text)
         #print(abspath(dirname('hello.mp3')))
         #f = open('hello.mp3')
