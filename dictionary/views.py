@@ -110,27 +110,6 @@ def makeAudio(text):
 	tts.save("hello-test.mp3")
 
 def sayWord(request, id):
-	#mixer.init()
-	#mixer.music.load('hello.mp3')
-	#mixer.music.play()
-	# sentences = Sentence.objects.all()
-	# for sentence in sentences:
-	# 	# unicode_text = sentence.chinese_text.encode('unicode-escape')
-	# 	# print(unicode_text)
-	# 	sentence.chinese_text = sentence.chinese_text.encode('ascii').decode('unicode-escape')
-	# 	print(sentence.chinese_text)
-	# return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
-    # print(id)
-    # audio_file = Sentence.objects.get(pk=id)
-    # print(audio_file)
-    # print(audio_file.audio_filename)
-
-    # fname=audio_file.audio_filename
-    # f = open(fname,"rb") 
-    # response = HttpResponse()
-    # response.write(f.read())
-    # response['Content-Type'] ='audio/mp3'
-    # response['Content-Length'] =os.path.getsize(fname )
     if request.method == 'POST':
         response = "hello"
         return response
