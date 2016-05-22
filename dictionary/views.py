@@ -61,7 +61,7 @@ def showWords(request):
     		# print(unicode_text)
             print(sentence)
     		#sentence.chinese_text = sentence.chinese_text.encode('utf8').decode('unicode-escape')
-            sentence.chinese_text = sentence.chinese_text.decode('unicode-escape')
+            sentence.chinese_text = sentence.chinese_text.decode('utf-8')
             #sentence.chinese_text = sentence.chinese_text.decode('unicode-escape')
     		#print(sentence.chinese_text)
     	return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
@@ -88,16 +88,16 @@ def saveWord(request):
         #audio_file = File(f)
 
         # make a string for the filename
-        #id_string = makeId()
+        id_string = makeId()
         #print(id_string)
-        #file_string = 'audio-' + id_string + '.mp3'
+        file_string = 'audio-' + id_string + '.mp3'
         #print(file_string)
         #tts = gTTS(text=text, lang='en')
         #tts.save(file_string)
 
 
-        #sentence = Sentence(sentence_text=request.POST.get('text'), chinese_text=unicode_text, audio_filename="test", pub_date=now, user=current_user)
-        #sentence.save()
+        sentence = Sentence(sentence_text=text, chinese_text=unicode_text, audio_filename="test", pub_date=now, user=current_user)
+        sentence.save()
         #sentence.text_recording.save('new', audio_file)
         #audio_fiel.close()
 
