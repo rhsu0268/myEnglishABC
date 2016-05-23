@@ -110,11 +110,12 @@ def makeAudio(text):
 	tts.save("hello-test.mp3")
 
 def sayWord(request, id):
-    if request.method == 'POST':
+    if request.is_ajax():
+        if request.method == 'POST':
+            resp = "hello"
+            return HttpResponse(resp)
         resp = "hello"
         return HttpResponse(resp)
-    resp = "hello"
-    return HttpResponse(resp)
     #return render(request, 'dictionary/saved_sentence.html')
 
 def deleteWord(request, id):
