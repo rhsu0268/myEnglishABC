@@ -114,8 +114,8 @@ def sayWord(request):
     #return HttpResponse(resp)
     #if request.is_ajax():
     if request.method == 'POST':
-    #     resp = "hello"
-        return HttpResponse(resp)
+        id = request.POST.get('id')
+        return HttpResponse(id)
     #     return render(request, 'dictionary/saved_sentence.html')
     # #resp = "hello"
     # return render(request, 'dictionary/saved_sentence.html')

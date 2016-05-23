@@ -21,6 +21,7 @@ $( '.success' ).click(function() {
   	}).done(function(data) {
     	console.log("success");
     	alert(data);
+    	console.log(data)
 
   	}); 
 
