@@ -109,7 +109,7 @@ def makeAudio(text):
 	tts = gTTS(text=text, lang='en')
 	tts.save("hello-test.mp3")
 
-def sayWord(request, id):
+def sayWord(request):
     resp="Say word"
     #return HttpResponse(resp)
     #if request.is_ajax():
