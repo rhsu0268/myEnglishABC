@@ -12,7 +12,7 @@ $( '.success' ).click(function() {
 
 	$.ajax({
 
-    	url: "/sayWord/" + button_id,
+    	url: "/dictionary/sayWord/" + button_id,
     	type: "POST",
     	data: { id: button_id, 
             csrfmiddlewaretoken: csrftoken
