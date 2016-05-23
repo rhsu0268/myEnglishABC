@@ -112,15 +112,14 @@ def makeAudio(text):
 def sayWord(request):
     #resp="Say word"
     #return HttpResponse(resp)
-    if request.is_ajax():
-        if request.method == 'POST':
-            id = request.POST.get('id')
-            word = Sentence.objects.get(pk=id)
-            sentence = word.sentence
-            return HttpResponse(sentence)
-        #     return render(request, 'dictionary/saved_sentence.html')
-        # #resp = "hello"
-        return render(request, 'dictionary/saved_sentence.html')
+    if request.method == 'POST':
+        id = request.POST.get('id')
+        word = Sentence.objects.get(pk=id)
+        sentence = word.sentence
+        return HttpResponse(sentence)
+    #     return render(request, 'dictionary/saved_sentence.html')
+    # #resp = "hello"
+    return render(request, 'dictionary/saved_sentence.html')
     #return HttpResponse(resp)
 
 def deleteWord(request, id):
