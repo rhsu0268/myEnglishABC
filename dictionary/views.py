@@ -110,13 +110,13 @@ def makeAudio(text):
 	tts.save("hello-test.mp3")
 
 def sayWord(request):
-    resp="Say word"
+    resp="hello"
     id = 19
     #return HttpResponse(resp)
     if request.method == 'POST':
-        id = request.POST.get('sentence_id')
-        word = Sentence.objects.get(pk=id)
-        resp = word.sentence
+        #id = request.POST.get('sentence_id')
+        #word = Sentence.objects.get(pk=id)
+        #resp = word.sentence
         return HttpResponse(resp)
     #     return render(request, 'dictionary/saved_sentence.html')
     # #resp = "hello"
