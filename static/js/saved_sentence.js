@@ -20,7 +20,7 @@ $( '.success' ).click(function() {
 
   	}).done(function(data) {
     	console.log("success");
-    	alert("success");
+    	alert(data);
 
   	}); 
 
