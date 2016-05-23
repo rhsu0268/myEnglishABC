@@ -110,7 +110,7 @@ def makeAudio(text):
 	tts.save("hello-test.mp3")
 
 def sayWord(request):
-    resp="Say word"
+    #resp="Say word"
     #return HttpResponse(resp)
     #if request.is_ajax():
     if request.method == 'POST':
