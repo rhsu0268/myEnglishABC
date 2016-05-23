@@ -115,11 +115,13 @@ def sayWord(request):
     #if request.is_ajax():
     if request.method == 'POST':
         id = request.POST.get('id')
-        return HttpResponse(id)
+        word = Sentence.objects.get(pk=id)
+        sentence = word.sentence
+        return HttpResponse(sentence)
     #     return render(request, 'dictionary/saved_sentence.html')
     # #resp = "hello"
-    # return render(request, 'dictionary/saved_sentence.html')
-    return HttpResponse(resp)
+    return render(request, 'dictionary/saved_sentence.html')
+    #return HttpResponse(resp)
 
 def deleteWord(request, id):
     word = Sentence.objects.get(pk=id)
