@@ -111,6 +111,7 @@ def makeAudio(text):
 
 def sayWord(request):
     resp="Say word"
+    id = 19
     #return HttpResponse(resp)
     if request.method == 'POST':
         id = request.POST.get('sentence_id')

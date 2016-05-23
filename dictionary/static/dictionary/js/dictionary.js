@@ -97,6 +97,8 @@ $( '#save_word' ).click(function() {
     console.log("success");
     alert(data);
 
+    // https://translate.google.com/translate_tts?ie=UTF-8&q=iamgoinghome&tl=en&client=tw-ob
+
   }); 
 
 });
