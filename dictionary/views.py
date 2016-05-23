@@ -119,7 +119,7 @@ def sayWord(request):
     #     return render(request, 'dictionary/saved_sentence.html')
     # #resp = "hello"
     # return render(request, 'dictionary/saved_sentence.html')
-    return render(request, 'dictionary/saved_sentence.html')
+    return HttpResponse(resp)
 
 def deleteWord(request, id):
     word = Sentence.objects.get(pk=id)
