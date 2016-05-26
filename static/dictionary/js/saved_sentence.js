@@ -22,7 +22,7 @@ $( '.success' ).click(function() {
 
   	}).done(function(data) {
     	console.log("success");
-    	alert(data);
+    	//alert(data);
     	console.log(data)
 
         window.location.href = 'https://translate.google.com/translate_tts?ie=UTF-8&q=' + data + '&tl=en&client=tw-ob';

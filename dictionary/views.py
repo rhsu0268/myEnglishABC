@@ -139,8 +139,8 @@ def deleteWord(request, id):
     #     sentence.chinese_text = sentence.chinese_text.decode('unicode-escape')
     #     print(sentence.chinese_text)
     # return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
-    return redirect("/dictionary/savedWords")
-
+    #return redirect("/dictionary/savedWords")
+    return HttpResponseRedirect('/dictionary/savedWords')
 def makeId():
 
     length = 5
