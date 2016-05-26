@@ -25,7 +25,7 @@ $( '.success' ).click(function() {
     	alert(data);
     	console.log(data)
 
-        windows.location.href = 'https://translate.google.com/translate_tts?ie=UTF-8&q=iamgoinghome&tl=en&client=tw-ob';
+        window.location.href = 'https://translate.google.com/translate_tts?ie=UTF-8&q=iamgoinghome&tl=en&client=tw-ob';
 
   	}); 
     
