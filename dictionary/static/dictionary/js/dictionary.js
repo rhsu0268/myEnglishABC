@@ -1,4 +1,5 @@
 console.log("On the dictionary page!");
+console.log("TEST");
 
 
 var sentence;
