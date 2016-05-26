@@ -111,17 +111,17 @@ def makeAudio(text):
 
 def sayWord(request):
     resp="hello"
-    id = 19
+    #id = 19
     #return HttpResponse(resp)
-    if request.method == 'POST':
-        sentence_id = request.POST.get('sentence_id')
-        word = Sentence.objects.get(pk=sentence_id)
-        resp = word.sentence
-        return HttpResponse(resp)
+    # if request.method == 'POST':
+    #     sentence_id = request.POST.get('sentence_id')
+    #     word = Sentence.objects.get(pk=sentence_id)
+    #     resp = word.sentence
+    #     return HttpResponse(resp)
     #     return render(request, 'dictionary/saved_sentence.html')
     # #resp = "hello"
-    return render(request, 'dictionary/saved_sentence.html')
-    #return HttpResponse(resp)
+    # return render(request, 'dictionary/saved_sentence.html')
+    return HttpResponse(resp)
 
 def deleteWord(request, id):
     word = Sentence.objects.get(pk=id)
