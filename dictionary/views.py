@@ -115,8 +115,9 @@ def sayWord(request):
     #return HttpResponse(resp)
     if request.method == 'POST':
         sentence_id = request.POST.get('sentence_id')
-        return HttpResponse(sentence_id)
-    #     word = Sentence.objects.get(pk=sentence_id)
+        #return HttpResponse(sentence_id)
+        word = Sentence.objects.get(pk=sentence_id)
+        return HttpResponse(word)
     #     resp = word.sentence
     #     return HttpResponse(resp)
     #     return render(request, 'dictionary/saved_sentence.html')
