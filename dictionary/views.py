@@ -113,8 +113,9 @@ def sayWord(request):
     resp="hello"
     #id = 19
     #return HttpResponse(resp)
-    # if request.method == 'POST':
-    #     sentence_id = request.POST.get('sentence_id')
+    if request.method == 'POST':
+        sentence_id = request.POST.get('sentence_id')
+        return HttpResponse(sentence_id)
     #     word = Sentence.objects.get(pk=sentence_id)
     #     resp = word.sentence
     #     return HttpResponse(resp)
