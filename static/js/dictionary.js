@@ -1,6 +1,6 @@
 console.log("On the dictionary page!");
-console.log("TEST");
-console.log("Hello");
+//console.log("TEST");
+//console.log("Hello");
 
 
 var sentence;

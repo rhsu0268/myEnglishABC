@@ -1,5 +1,8 @@
 console.log("On the dictionary page!");
-//console.log("TEST");
+console.log("TEST");
+
+console.log("TEST 2");
+console.log("Hello");
 
 
 var sentence;
