@@ -9,7 +9,7 @@ $( '.success' ).click(function() {
 	console.log(button_id);
 
 	var csrftoken = getCookie('csrftoken');
-
+    /*
 	$.ajax({
 
     	url: "/sayWord/",
@@ -24,7 +24,7 @@ $( '.success' ).click(function() {
     	console.log(data)
 
   	}); 
-
+    */
 });
 
 // using jQuery
