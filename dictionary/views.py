@@ -55,7 +55,7 @@ def saveSentence(request):
 def showWords(request):
     if request.user.is_authenticated():
     	resp = "These are your saved words!"
-    	sentences = Sentence.objects.all().filter(user=request.user)
+    	sentences = Sentence.objects.filter(user=request.user)
     	for sentence in sentences:
     		# unicode_text = sentence.chinese_text.encode('unicode-escape')
     		# print(unicode_text)
