@@ -140,7 +140,7 @@ def deleteWord(request, id):
     #     print(sentence.chinese_text)
     # return render(request, 'dictionary/saved_sentence.html', { 'sentences': sentences })
     #return redirect("/dictionary/savedWords")
-    return render(request, 'dictionary/delete_message.html')
+    return render(request, 'dictionary/saved_sentence.html')
 
 
 def makeId():
