@@ -42,7 +42,7 @@ def login(request):
             error = "Sorry, you must fill in both fields!"
             return render(request, "login/login.html", {'error': error})
         user = auth.authenticate(username=username, password=password)
-        if user is not None and user.is_active:
+        if user is not None:
         # Correct password, and the user is marked "active"
             auth.login(request, user)
             # Redirect to a success page.
