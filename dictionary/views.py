@@ -55,7 +55,7 @@ def saveSentence(request):
 def showWords(request):
     if request.user.is_authenticated():
     	resp = "These are your saved words!"
-    	sentences = Sentence.objects.get(user=request.user)
+    	sentences = Sentence.objects.filter(user=request.user)
         if (!sentences):
             return render(request, 'dictionary/saved_sentence.html')
     	for sentence in sentences:
