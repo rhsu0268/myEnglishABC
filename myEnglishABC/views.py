@@ -51,13 +51,6 @@ def login(request):
             error = "Sorry, that's not a valid username or password!"
             return render(request, "login/login.html", {'error': error})
     else:
-        # Show an error page
-        #error = "Sorry, that's not a valid username or password!"
-        #print(error)
-        #form = {
-            #'form_errors': form 
-        #}
-        #return render(request, "login/login.html", {'error': error})
         return render(request, "login/login.html")
 
 def show_register(request):
