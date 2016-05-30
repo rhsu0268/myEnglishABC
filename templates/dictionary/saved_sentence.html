@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+
+{% block title %}Saved Sentences{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row">
+	<h1 id="saved_word_title">These are your saved sentences/words:</h1>
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Word/Sentence</th>
+	      <th width="200">Chinese Translation</th>
+	      <th width="200">Say It</th>
+	      <th width="200">Delete</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	{% for sentence in sentences %}
+	    <tr>
+	      <td>{{ sentence.sentence_text }}</td>
+	      <td>{{ sentence.chinese_text }}</td>
+	      <td>
+	      	
+	      	<button id="{{ sentence.id }}" class="button success">Say It</button>
+	      </td>
+	      <td><a href="/dictionary/deleteWord/{{ sentence.id }}" id="{{ sentence.id }}" class="button alert">Delete</a></td>
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+	</table>
+</div>
+
+<!--<script src="../static/dictionary/js/jquery.js"></script>-->
+<!--<script src="../static/dictionary/js/saved_sentence.js"></script>-->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'dictionary/js/saved_sentence.js' %}"></script>
+
+{% endblock %}
