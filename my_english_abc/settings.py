@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
@@ -53,12 +55,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'my_english_abc.urls'
 
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+BASE_PATH = os.path.dirname(os.path.dirname(__file__))
+
+#TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (
+    os.path.join(BASE_PATH, 'templates'),
+)
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['TEMPLATE_PATH'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +77,11 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+)
 
 WSGI_APPLICATION = 'my_english_abc.wsgi.application'
 
