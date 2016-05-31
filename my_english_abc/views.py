@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 def index(request):
     #return HttpResponse("Hello, world. You are at the homepage of the application")
-   return render(request, 'index.html', {'time': datetime.now() })
+   return render(request, 'templates/index.html', {'time': datetime.now() })
 
 
 
