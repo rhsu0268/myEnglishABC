@@ -56,7 +56,7 @@ ROOT_URLCONF = 'my_english_abc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['BASEDIR', 'templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
