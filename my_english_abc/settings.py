@@ -55,17 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'my_english_abc.urls'
 
-BASE_PATH = os.path.dirname(os.path.dirname(__file__))
-
-#TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-TEMPLATE_DIRS = (
-    os.path.join(BASE_PATH, 'templates'),
-)
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
